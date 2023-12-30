@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB451AE22B4098AB00F5CA16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB451AE12B4098AB00F5CA16 /* Assets.xcassets */; };
+		AB451AE52B4098AB00F5CA16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB451AE42B4098AB00F5CA16 /* Preview Assets.xcassets */; };
+		AB451AEA2B4098AB00F5CA16 /* vero_task_api.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB451AE82B4098AB00F5CA16 /* vero_task_api.xcdatamodeld */; };
+		AB451AF22B40A0F300F5CA16 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF12B40A0F300F5CA16 /* HomeController.swift */; };
+		AB451AF52B40A19C00F5CA16 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF42B40A19C00F5CA16 /* HomeViewModel.swift */; };
+		AB451AF72B40A1EA00F5CA16 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF62B40A1EA00F5CA16 /* HomeRouter.swift */; };
+		AB451AF92B40A1F000F5CA16 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF82B40A1F000F5CA16 /* HomeBuilder.swift */; };
+		AB451AFD2B40A52000F5CA16 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AFC2B40A52000F5CA16 /* NetworkManager.swift */; };
+		AB451B012B40A54E00F5CA16 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B002B40A54E00F5CA16 /* Request.swift */; };
+		AB451B052B40A58300F5CA16 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B042B40A58300F5CA16 /* Constants.swift */; };
+		AB451B072B40A59E00F5CA16 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B062B40A59E00F5CA16 /* API.swift */; };
+		AB451B0A2B40A62100F5CA16 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B092B40A62100F5CA16 /* String+Extensions.swift */; };
+		AB451B0C2B40A62F00F5CA16 /* CharacterSet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B0B2B40A62F00F5CA16 /* CharacterSet+Extension.swift */; };
+		AB451B0E2B40A6CE00F5CA16 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B0D2B40A6CE00F5CA16 /* APIError.swift */; };
+		AB451B102B40A75400F5CA16 /* TaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B0F2B40A75400F5CA16 /* TaskResponse.swift */; };
+		AB451B122B40A9B300F5CA16 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B112B40A9B300F5CA16 /* TokenResponse.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AB451ADA2B4098AA00F5CA16 /* vero-task-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vero-task-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB451AE12B4098AB00F5CA16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB451AE42B4098AB00F5CA16 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AB451AE92B4098AB00F5CA16 /* vero_task_api.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = vero_task_api.xcdatamodel; sourceTree = "<group>"; };
+		AB451AF12B40A0F300F5CA16 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		AB451AF42B40A19C00F5CA16 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		AB451AF62B40A1EA00F5CA16 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		AB451AF82B40A1F000F5CA16 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		AB451AFC2B40A52000F5CA16 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AB451B002B40A54E00F5CA16 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		AB451B042B40A58300F5CA16 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AB451B062B40A59E00F5CA16 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		AB451B092B40A62100F5CA16 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		AB451B0B2B40A62F00F5CA16 /* CharacterSet+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Extension.swift"; sourceTree = "<group>"; };
+		AB451B0D2B40A6CE00F5CA16 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		AB451B0F2B40A75400F5CA16 /* TaskResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskResponse.swift; sourceTree = "<group>"; };
+		AB451B112B40A9B300F5CA16 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB451AD72B4098AA00F5CA16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB451AD12B4098AA00F5CA16 = {
+			isa = PBXGroup;
+			children = (
+				AB451ADC2B4098AA00F5CA16 /* vero-task-api */,
+				AB451ADB2B4098AA00F5CA16 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB451ADB2B4098AA00F5CA16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB451ADA2B4098AA00F5CA16 /* vero-task-api.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB451ADC2B4098AA00F5CA16 /* vero-task-api */ = {
+			isa = PBXGroup;
+			children = (
+				AB451B082B40A60A00F5CA16 /* Extensions */,
+				AB451B022B40A57100F5CA16 /* Utilities */,
+				AB451AFE2B40A53700F5CA16 /* Models */,
+				AB451AFA2B40A50A00F5CA16 /* Managers */,
+				AB451AF02B40A0CB00F5CA16 /* Modules */,
+				AB451AE12B4098AB00F5CA16 /* Assets.xcassets */,
+				AB451AE82B4098AB00F5CA16 /* vero_task_api.xcdatamodeld */,
+				AB451AE32B4098AB00F5CA16 /* Preview Content */,
+			);
+			path = "vero-task-api";
+			sourceTree = "<group>";
+		};
+		AB451AE32B4098AB00F5CA16 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AB451AE42B4098AB00F5CA16 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AB451AF02B40A0CB00F5CA16 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AB451AF32B40A0F900F5CA16 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AB451AF32B40A0F900F5CA16 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AB451AF12B40A0F300F5CA16 /* HomeController.swift */,
+				AB451AF42B40A19C00F5CA16 /* HomeViewModel.swift */,
+				AB451AF62B40A1EA00F5CA16 /* HomeRouter.swift */,
+				AB451AF82B40A1F000F5CA16 /* HomeBuilder.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AB451AFA2B40A50A00F5CA16 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				AB451AFB2B40A50F00F5CA16 /* Network */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		AB451AFB2B40A50F00F5CA16 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AB451AFC2B40A52000F5CA16 /* NetworkManager.swift */,
+				AB451B0D2B40A6CE00F5CA16 /* APIError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AB451AFE2B40A53700F5CA16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB451B002B40A54E00F5CA16 /* Request.swift */,
+				AB451B0F2B40A75400F5CA16 /* TaskResponse.swift */,
+				AB451B112B40A9B300F5CA16 /* TokenResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AB451B022B40A57100F5CA16 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AB451B032B40A57700F5CA16 /* Constants */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AB451B032B40A57700F5CA16 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AB451B042B40A58300F5CA16 /* Constants.swift */,
+				AB451B062B40A59E00F5CA16 /* API.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		AB451B082B40A60A00F5CA16 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB451B092B40A62100F5CA16 /* String+Extensions.swift */,
+				AB451B0B2B40A62F00F5CA16 /* CharacterSet+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB451AD92B4098AA00F5CA16 /* vero-task-api */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB451AED2B4098AB00F5CA16 /* Build configuration list for PBXNativeTarget "vero-task-api" */;
+			buildPhases = (
+				AB451AD62B4098AA00F5CA16 /* Sources */,
+				AB451AD72B4098AA00F5CA16 /* Frameworks */,
+				AB451AD82B4098AA00F5CA16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "vero-task-api";
+			productName = "vero-task-api";
+			productReference = AB451ADA2B4098AA00F5CA16 /* vero-task-api.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB451AD22B4098AA00F5CA16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AB451AD92B4098AA00F5CA16 = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
+				};
+			};
+			buildConfigurationList = AB451AD52B4098AA00F5CA16 /* Build configuration list for PBXProject "vero-task-api" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB451AD12B4098AA00F5CA16;
+			productRefGroup = AB451ADB2B4098AA00F5CA16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB451AD92B4098AA00F5CA16 /* vero-task-api */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB451AD82B4098AA00F5CA16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB451AE52B4098AB00F5CA16 /* Preview Assets.xcassets in Resources */,
+				AB451AE22B4098AB00F5CA16 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB451AD62B4098AA00F5CA16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB451B0A2B40A62100F5CA16 /* String+Extensions.swift in Sources */,
+				AB451AFD2B40A52000F5CA16 /* NetworkManager.swift in Sources */,
+				AB451AF22B40A0F300F5CA16 /* HomeController.swift in Sources */,
+				AB451AF72B40A1EA00F5CA16 /* HomeRouter.swift in Sources */,
+				AB451AF92B40A1F000F5CA16 /* HomeBuilder.swift in Sources */,
+				AB451B0E2B40A6CE00F5CA16 /* APIError.swift in Sources */,
+				AB451B012B40A54E00F5CA16 /* Request.swift in Sources */,
+				AB451AF52B40A19C00F5CA16 /* HomeViewModel.swift in Sources */,
+				AB451AEA2B4098AB00F5CA16 /* vero_task_api.xcdatamodeld in Sources */,
+				AB451B102B40A75400F5CA16 /* TaskResponse.swift in Sources */,
+				AB451B0C2B40A62F00F5CA16 /* CharacterSet+Extension.swift in Sources */,
+				AB451B122B40A9B300F5CA16 /* TokenResponse.swift in Sources */,
+				AB451B072B40A59E00F5CA16 /* API.swift in Sources */,
+				AB451B052B40A58300F5CA16 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AB451AEB2B4098AB00F5CA16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AB451AEC2B4098AB00F5CA16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB451AEE2B4098AB00F5CA16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"vero-task-api/Preview Content\"";
+				DEVELOPMENT_TEAM = ZTWYW76YMF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bertayyonel.vero-task-api";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB451AEF2B4098AB00F5CA16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"vero-task-api/Preview Content\"";
+				DEVELOPMENT_TEAM = ZTWYW76YMF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bertayyonel.vero-task-api";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB451AD52B4098AA00F5CA16 /* Build configuration list for PBXProject "vero-task-api" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB451AEB2B4098AB00F5CA16 /* Debug */,
+				AB451AEC2B4098AB00F5CA16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB451AED2B4098AB00F5CA16 /* Build configuration list for PBXNativeTarget "vero-task-api" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB451AEE2B4098AB00F5CA16 /* Debug */,
+				AB451AEF2B4098AB00F5CA16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AB451AE82B4098AB00F5CA16 /* vero_task_api.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AB451AE92B4098AB00F5CA16 /* vero_task_api.xcdatamodel */,
+			);
+			currentVersion = AB451AE92B4098AB00F5CA16 /* vero_task_api.xcdatamodel */;
+			path = vero_task_api.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AB451AD22B4098AA00F5CA16 /* Project object */;
+}
