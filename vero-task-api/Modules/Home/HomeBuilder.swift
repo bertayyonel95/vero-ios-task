@@ -9,9 +9,12 @@ import Foundation
 
 class HomeBuilder {
     static func build() -> HomeController {
+        let dependencyContainer = DependencyContainer.shared
         let homeRouter = HomeRouter()
         let homeViewModel = HomeViewModel(
-            homeRouter: homeRouter
+            homeRouter: homeRouter,
+            tokenAPI: dependencyContainer.tokenAPI(),
+            taskAPI: dependencyContainer.taskAPI()
         )
         let homeController = HomeController(viewModel: homeViewModel)
         homeRouter.homeController = homeController

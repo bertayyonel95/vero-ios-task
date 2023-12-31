@@ -42,7 +42,7 @@ struct UserInfo: Decodable {
 }
 
 struct TokenResponse: Decodable {
-    let oAuth: OAuth
+    let oauth: OAuth
     let userInfo: UserInfo
     let permissions: [String?]
     let apiVersion: String

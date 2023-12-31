@@ -7,22 +7,34 @@
 
 import Foundation
 
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    // Add more methods as needed
+}
+
 class Request {
     // MARK: Properties
     var path: String {
         .empty
     }
     var parameters: [String: Any?] {
-        [
-            :
-        ]
+        [:]
     }
     var headers: [String: String] {
-        [
-            :
-        ]
+        [:]
     }
-    var endpoint: String = .empty
+    var endpoint: String
+    
+    var body: Data?
+    
+    var method: HTTPMethod
+    
+    init(endpoint: String, method: HTTPMethod, body: Data?) {
+        self.endpoint = endpoint
+        self.method = method
+        self.body = body
+    }
 }
 
 // MARK: - Helpers
@@ -34,6 +46,8 @@ extension Request {
     func generateRequest() -> URLRequest? {
         guard let url = generateURL(with: generateQueryItems()) else { return nil }
         var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        request.httpBody = body
         headers.forEach { header in
             request.addValue(header.value, forHTTPHeaderField: header.key)
         }

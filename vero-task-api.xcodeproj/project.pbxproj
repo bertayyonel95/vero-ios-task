@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AB451AE22B4098AB00F5CA16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB451AE12B4098AB00F5CA16 /* Assets.xcassets */; };
-		AB451AE52B4098AB00F5CA16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB451AE42B4098AB00F5CA16 /* Preview Assets.xcassets */; };
 		AB451AEA2B4098AB00F5CA16 /* vero_task_api.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB451AE82B4098AB00F5CA16 /* vero_task_api.xcdatamodeld */; };
 		AB451AF22B40A0F300F5CA16 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF12B40A0F300F5CA16 /* HomeController.swift */; };
 		AB451AF52B40A19C00F5CA16 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF42B40A19C00F5CA16 /* HomeViewModel.swift */; };
@@ -23,12 +22,18 @@
 		AB451B0E2B40A6CE00F5CA16 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B0D2B40A6CE00F5CA16 /* APIError.swift */; };
 		AB451B102B40A75400F5CA16 /* TaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B0F2B40A75400F5CA16 /* TaskResponse.swift */; };
 		AB451B122B40A9B300F5CA16 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B112B40A9B300F5CA16 /* TokenResponse.swift */; };
+		AB451B152B417C3400F5CA16 /* TokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B142B417C3400F5CA16 /* TokenAPI.swift */; };
+		AB451B172B417C6200F5CA16 /* TokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B162B417C6200F5CA16 /* TokenRequest.swift */; };
+		AB451B192B417E6F00F5CA16 /* TaskRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B182B417E6F00F5CA16 /* TaskRequest.swift */; };
+		AB451B1B2B417F7F00F5CA16 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B1A2B417F7F00F5CA16 /* DependencyContainer.swift */; };
+		AB451B1E2B41811400F5CA16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B1C2B41811400F5CA16 /* AppDelegate.swift */; };
+		AB451B1F2B41811400F5CA16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B1D2B41811400F5CA16 /* SceneDelegate.swift */; };
+		AB451B292B418E2000F5CA16 /* TaskAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451B282B418E2000F5CA16 /* TaskAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB451ADA2B4098AA00F5CA16 /* vero-task-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vero-task-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB451AE12B4098AB00F5CA16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AB451AE42B4098AB00F5CA16 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB451AE92B4098AB00F5CA16 /* vero_task_api.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = vero_task_api.xcdatamodel; sourceTree = "<group>"; };
 		AB451AF12B40A0F300F5CA16 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		AB451AF42B40A19C00F5CA16 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -43,6 +48,14 @@
 		AB451B0D2B40A6CE00F5CA16 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		AB451B0F2B40A75400F5CA16 /* TaskResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskResponse.swift; sourceTree = "<group>"; };
 		AB451B112B40A9B300F5CA16 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		AB451B142B417C3400F5CA16 /* TokenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAPI.swift; sourceTree = "<group>"; };
+		AB451B162B417C6200F5CA16 /* TokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequest.swift; sourceTree = "<group>"; };
+		AB451B182B417E6F00F5CA16 /* TaskRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRequest.swift; sourceTree = "<group>"; };
+		AB451B1A2B417F7F00F5CA16 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		AB451B1C2B41811400F5CA16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB451B1D2B41811400F5CA16 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AB451B222B41830500F5CA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AB451B282B418E2000F5CA16 /* TaskAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +88,9 @@
 		AB451ADC2B4098AA00F5CA16 /* vero-task-api */ = {
 			isa = PBXGroup;
 			children = (
+				AB451B222B41830500F5CA16 /* Info.plist */,
+				AB451B1C2B41811400F5CA16 /* AppDelegate.swift */,
+				AB451B1D2B41811400F5CA16 /* SceneDelegate.swift */,
 				AB451B082B40A60A00F5CA16 /* Extensions */,
 				AB451B022B40A57100F5CA16 /* Utilities */,
 				AB451AFE2B40A53700F5CA16 /* Models */,
@@ -82,17 +98,8 @@
 				AB451AF02B40A0CB00F5CA16 /* Modules */,
 				AB451AE12B4098AB00F5CA16 /* Assets.xcassets */,
 				AB451AE82B4098AB00F5CA16 /* vero_task_api.xcdatamodeld */,
-				AB451AE32B4098AB00F5CA16 /* Preview Content */,
 			);
 			path = "vero-task-api";
-			sourceTree = "<group>";
-		};
-		AB451AE32B4098AB00F5CA16 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				AB451AE42B4098AB00F5CA16 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		AB451AF02B40A0CB00F5CA16 /* Modules */ = {
@@ -125,6 +132,7 @@
 		AB451AFB2B40A50F00F5CA16 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AB451B132B417C2B00F5CA16 /* APIs */,
 				AB451AFC2B40A52000F5CA16 /* NetworkManager.swift */,
 				AB451B0D2B40A6CE00F5CA16 /* APIError.swift */,
 			);
@@ -134,9 +142,8 @@
 		AB451AFE2B40A53700F5CA16 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AB451B002B40A54E00F5CA16 /* Request.swift */,
-				AB451B0F2B40A75400F5CA16 /* TaskResponse.swift */,
-				AB451B112B40A9B300F5CA16 /* TokenResponse.swift */,
+				AB451B272B418DFA00F5CA16 /* Response */,
+				AB451B262B418DEA00F5CA16 /* Request */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				AB451B032B40A57700F5CA16 /* Constants */,
+				AB451B1A2B417F7F00F5CA16 /* DependencyContainer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -167,6 +175,34 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AB451B132B417C2B00F5CA16 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				AB451B142B417C3400F5CA16 /* TokenAPI.swift */,
+				AB451B282B418E2000F5CA16 /* TaskAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		AB451B262B418DEA00F5CA16 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				AB451B162B417C6200F5CA16 /* TokenRequest.swift */,
+				AB451B182B417E6F00F5CA16 /* TaskRequest.swift */,
+				AB451B002B40A54E00F5CA16 /* Request.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		AB451B272B418DFA00F5CA16 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				AB451B0F2B40A75400F5CA16 /* TaskResponse.swift */,
+				AB451B112B40A9B300F5CA16 /* TokenResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +219,8 @@
 			dependencies = (
 			);
 			name = "vero-task-api";
+			packageProductDependencies = (
+			);
 			productName = "vero-task-api";
 			productReference = AB451ADA2B4098AA00F5CA16 /* vero-task-api.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +250,9 @@
 				Base,
 			);
 			mainGroup = AB451AD12B4098AA00F5CA16;
+			packageReferences = (
+				AB451B232B418A5400F5CA16 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = AB451ADB2B4098AA00F5CA16 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,7 +267,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB451AE52B4098AB00F5CA16 /* Preview Assets.xcassets in Resources */,
 				AB451AE22B4098AB00F5CA16 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,18 +279,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB451B0A2B40A62100F5CA16 /* String+Extensions.swift in Sources */,
+				AB451B152B417C3400F5CA16 /* TokenAPI.swift in Sources */,
+				AB451B1E2B41811400F5CA16 /* AppDelegate.swift in Sources */,
+				AB451B192B417E6F00F5CA16 /* TaskRequest.swift in Sources */,
 				AB451AFD2B40A52000F5CA16 /* NetworkManager.swift in Sources */,
 				AB451AF22B40A0F300F5CA16 /* HomeController.swift in Sources */,
 				AB451AF72B40A1EA00F5CA16 /* HomeRouter.swift in Sources */,
 				AB451AF92B40A1F000F5CA16 /* HomeBuilder.swift in Sources */,
 				AB451B0E2B40A6CE00F5CA16 /* APIError.swift in Sources */,
+				AB451B172B417C6200F5CA16 /* TokenRequest.swift in Sources */,
 				AB451B012B40A54E00F5CA16 /* Request.swift in Sources */,
 				AB451AF52B40A19C00F5CA16 /* HomeViewModel.swift in Sources */,
 				AB451AEA2B4098AB00F5CA16 /* vero_task_api.xcdatamodeld in Sources */,
 				AB451B102B40A75400F5CA16 /* TaskResponse.swift in Sources */,
 				AB451B0C2B40A62F00F5CA16 /* CharacterSet+Extension.swift in Sources */,
+				AB451B1F2B41811400F5CA16 /* SceneDelegate.swift in Sources */,
 				AB451B122B40A9B300F5CA16 /* TokenResponse.swift in Sources */,
 				AB451B072B40A59E00F5CA16 /* API.swift in Sources */,
+				AB451B1B2B417F7F00F5CA16 /* DependencyContainer.swift in Sources */,
+				AB451B292B418E2000F5CA16 /* TaskAPI.swift in Sources */,
 				AB451B052B40A58300F5CA16 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,11 +432,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"vero-task-api/Preview Content\"";
 				DEVELOPMENT_TEAM = ZTWYW76YMF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "vero-task-api/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -416,11 +462,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"vero-task-api/Preview Content\"";
 				DEVELOPMENT_TEAM = ZTWYW76YMF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "vero-task-api/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -460,6 +505,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB451B232B418A5400F5CA16 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		AB451AE82B4098AB00F5CA16 /* vero_task_api.xcdatamodeld */ = {
