@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeBuilder {
     static func build() -> HomeController {

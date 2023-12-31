@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB361D7F2B419C550037A586 /* HomeCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361D7E2B419C550037A586 /* HomeCollectionViewCellViewModel.swift */; };
+		AB361D812B419CB40037A586 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361D802B419CB40037A586 /* HomeCollectionViewCell.swift */; };
+		AB361D842B419CFB0037A586 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB361D832B419CFB0037A586 /* SnapKit */; };
+		AB361D882B419F430037A586 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361D872B419F430037A586 /* Section.swift */; };
+		AB361D8F2B41BAF50037A586 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361D8E2B41BAF50037A586 /* CoreDataManager.swift */; };
+		AB361D982B420E9F0037A586 /* CoreDataPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361D972B420E9F0037A586 /* CoreDataPO.swift */; };
+		AB361D9B2B4217D40037A586 /* TaskManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB361D992B4217D40037A586 /* TaskManager.xcdatamodeld */; };
 		AB451AE22B4098AB00F5CA16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB451AE12B4098AB00F5CA16 /* Assets.xcassets */; };
-		AB451AEA2B4098AB00F5CA16 /* vero_task_api.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB451AE82B4098AB00F5CA16 /* vero_task_api.xcdatamodeld */; };
 		AB451AF22B40A0F300F5CA16 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF12B40A0F300F5CA16 /* HomeController.swift */; };
 		AB451AF52B40A19C00F5CA16 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF42B40A19C00F5CA16 /* HomeViewModel.swift */; };
 		AB451AF72B40A1EA00F5CA16 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF62B40A1EA00F5CA16 /* HomeRouter.swift */; };
@@ -32,9 +38,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB361D7E2B419C550037A586 /* HomeCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		AB361D802B419CB40037A586 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB361D872B419F430037A586 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		AB361D8E2B41BAF50037A586 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		AB361D972B420E9F0037A586 /* CoreDataPO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPO.swift; sourceTree = "<group>"; };
+		AB361D9A2B4217D40037A586 /* TaskManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskManager.xcdatamodel; sourceTree = "<group>"; };
 		AB451ADA2B4098AA00F5CA16 /* vero-task-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vero-task-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB451AE12B4098AB00F5CA16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AB451AE92B4098AB00F5CA16 /* vero_task_api.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = vero_task_api.xcdatamodel; sourceTree = "<group>"; };
 		AB451AF12B40A0F300F5CA16 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		AB451AF42B40A19C00F5CA16 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AB451AF62B40A1EA00F5CA16 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -63,12 +74,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB361D842B419CFB0037A586 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB361D7D2B419C430037A586 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AB361D7E2B419C550037A586 /* HomeCollectionViewCellViewModel.swift */,
+				AB361D802B419CB40037A586 /* HomeCollectionViewCell.swift */,
+				AB361D872B419F430037A586 /* Section.swift */,
+			);
+			name = Cell;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		AB361D8D2B41BAEB0037A586 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AB361D8E2B41BAF50037A586 /* CoreDataManager.swift */,
+				AB361D972B420E9F0037A586 /* CoreDataPO.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		AB451AD12B4098AA00F5CA16 = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +129,7 @@
 				AB451AFA2B40A50A00F5CA16 /* Managers */,
 				AB451AF02B40A0CB00F5CA16 /* Modules */,
 				AB451AE12B4098AB00F5CA16 /* Assets.xcassets */,
-				AB451AE82B4098AB00F5CA16 /* vero_task_api.xcdatamodeld */,
+				AB361D992B4217D40037A586 /* TaskManager.xcdatamodeld */,
 			);
 			path = "vero-task-api";
 			sourceTree = "<group>";
@@ -113,6 +145,7 @@
 		AB451AF32B40A0F900F5CA16 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				AB361D7D2B419C430037A586 /* Cell */,
 				AB451AF12B40A0F300F5CA16 /* HomeController.swift */,
 				AB451AF42B40A19C00F5CA16 /* HomeViewModel.swift */,
 				AB451AF62B40A1EA00F5CA16 /* HomeRouter.swift */,
@@ -124,6 +157,7 @@
 		AB451AFA2B40A50A00F5CA16 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				AB361D8D2B41BAEB0037A586 /* CoreData */,
 				AB451AFB2B40A50F00F5CA16 /* Network */,
 			);
 			path = Managers;
@@ -220,6 +254,7 @@
 			);
 			name = "vero-task-api";
 			packageProductDependencies = (
+				AB361D832B419CFB0037A586 /* SnapKit */,
 			);
 			productName = "vero-task-api";
 			productReference = AB451ADA2B4098AA00F5CA16 /* vero-task-api.app */;
@@ -252,6 +287,7 @@
 			mainGroup = AB451AD12B4098AA00F5CA16;
 			packageReferences = (
 				AB451B232B418A5400F5CA16 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AB361D822B419CFB0037A586 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = AB451ADB2B4098AA00F5CA16 /* Products */;
 			projectDirPath = "";
@@ -280,9 +316,12 @@
 			files = (
 				AB451B0A2B40A62100F5CA16 /* String+Extensions.swift in Sources */,
 				AB451B152B417C3400F5CA16 /* TokenAPI.swift in Sources */,
+				AB361D9B2B4217D40037A586 /* TaskManager.xcdatamodeld in Sources */,
+				AB361D812B419CB40037A586 /* HomeCollectionViewCell.swift in Sources */,
 				AB451B1E2B41811400F5CA16 /* AppDelegate.swift in Sources */,
 				AB451B192B417E6F00F5CA16 /* TaskRequest.swift in Sources */,
 				AB451AFD2B40A52000F5CA16 /* NetworkManager.swift in Sources */,
+				AB361D8F2B41BAF50037A586 /* CoreDataManager.swift in Sources */,
 				AB451AF22B40A0F300F5CA16 /* HomeController.swift in Sources */,
 				AB451AF72B40A1EA00F5CA16 /* HomeRouter.swift in Sources */,
 				AB451AF92B40A1F000F5CA16 /* HomeBuilder.swift in Sources */,
@@ -290,13 +329,15 @@
 				AB451B172B417C6200F5CA16 /* TokenRequest.swift in Sources */,
 				AB451B012B40A54E00F5CA16 /* Request.swift in Sources */,
 				AB451AF52B40A19C00F5CA16 /* HomeViewModel.swift in Sources */,
-				AB451AEA2B4098AB00F5CA16 /* vero_task_api.xcdatamodeld in Sources */,
 				AB451B102B40A75400F5CA16 /* TaskResponse.swift in Sources */,
 				AB451B0C2B40A62F00F5CA16 /* CharacterSet+Extension.swift in Sources */,
 				AB451B1F2B41811400F5CA16 /* SceneDelegate.swift in Sources */,
+				AB361D7F2B419C550037A586 /* HomeCollectionViewCellViewModel.swift in Sources */,
 				AB451B122B40A9B300F5CA16 /* TokenResponse.swift in Sources */,
 				AB451B072B40A59E00F5CA16 /* API.swift in Sources */,
 				AB451B1B2B417F7F00F5CA16 /* DependencyContainer.swift in Sources */,
+				AB361D882B419F430037A586 /* Section.swift in Sources */,
+				AB361D982B420E9F0037A586 /* CoreDataPO.swift in Sources */,
 				AB451B292B418E2000F5CA16 /* TaskAPI.swift in Sources */,
 				AB451B052B40A58300F5CA16 /* Constants.swift in Sources */,
 			);
@@ -507,6 +548,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AB361D822B419CFB0037A586 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
 		AB451B232B418A5400F5CA16 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -517,14 +566,22 @@
 		};
 /* End XCRemoteSwiftPackageReference section */
 
+/* Begin XCSwiftPackageProductDependency section */
+		AB361D832B419CFB0037A586 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB361D822B419CFB0037A586 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
-		AB451AE82B4098AB00F5CA16 /* vero_task_api.xcdatamodeld */ = {
+		AB361D992B4217D40037A586 /* TaskManager.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AB451AE92B4098AB00F5CA16 /* vero_task_api.xcdatamodel */,
+				AB361D9A2B4217D40037A586 /* TaskManager.xcdatamodel */,
 			);
-			currentVersion = AB451AE92B4098AB00F5CA16 /* vero_task_api.xcdatamodel */;
-			path = vero_task_api.xcdatamodeld;
+			currentVersion = AB361D9A2B4217D40037A586 /* TaskManager.xcdatamodel */;
+			path = TaskManager.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -6,16 +6,19 @@
 //
 
 import Foundation
+import CoreData
 
 // MARK: - HomeViewModelInput
 protocol HomeViewModelInput {
     // MARK: Properties
     var output: HomeViewModelOutput? { get set }
+    func getSections() -> [Section]
+    func updateSections(_ sections: [Section])
 }
 
 // MARK: - HomeViewModelOutput
 protocol HomeViewModelOutput: AnyObject {
-    
+    func home(_ viewModel: HomeViewModelInput, sectionDidLoad list: [Section])
 }
 
 // MARK: - HomeViewModel
@@ -24,7 +27,11 @@ final class HomeViewModel: HomeViewModelInput  {
     private var homeRouter: HomeRouting
     private var tokenAPI: TokenFetchable
     private var taskAPI: TaskFetchable
+    private var sections: [Section] = []
     private var token: String = .empty
+    private var tasks: [CoreDataPO] = []
+    private var cells: [HomeCollectionViewCellViewModel] = []
+    var container: NSPersistentContainer!
     weak var output: HomeViewModelOutput?
     
     init(homeRouter: HomeRouting, tokenAPI: TokenFetchable, taskAPI: TaskFetchable) {
@@ -32,6 +39,7 @@ final class HomeViewModel: HomeViewModelInput  {
         self.tokenAPI = tokenAPI
         self.taskAPI = taskAPI
         getToken()
+        addCoreData()
     }
     
     func getToken() {
@@ -54,10 +62,72 @@ final class HomeViewModel: HomeViewModelInput  {
             guard let self else { return }
             switch result {
             case .success(let success):
-                print(success)
+                generateCellData(dataSet: success)
             case .failure(let failure):
                 print(failure)
             }
         }
     }
+    
+    func getSections() -> [Section] {
+        sections
+    }
+    
+    func updateSections(_ sections: [Section]) {
+        self.sections = sections
+    }
+    
+    func addCoreData() {
+        let data = CoreDataPO()
+        data.businessUnit = "business unit"
+        data.businessUnitKey = "business unit key"
+        data.colorCode = "colorCode"
+        data.isAvailableInTimeTrackingKioskMode = true
+        data.parentTaskID = "Parent task id"
+        data.preplanningBoardQuickSelect = "preplanning"
+        data.sort = "sort"
+        data.task = "task"
+        data.title = "title"
+        data.wageType = "wagetype"
+        data.taskDescription = "description"
+        data.workingTime = "workingtime"
+        CoreDataManager.shared.write(data: data)
+        CoreDataManager.shared.fetch() { cdata in
+        }
+    }
+}
+
+// MARK: - Helpers
+private extension HomeViewModel {
+    func generateCellData(dataSet: [TaskResponse]) {
+        dataSet.forEach { data in
+            let cellViewModel = generateViewModel(with: data)
+            cells.append(cellViewModel)
+        }
+        
+        cells.forEach { item in
+            let section = Section(task: item)
+            if !sections.contains(section) { sections.append(section) }
+        }
+        output?.home(self, sectionDidLoad: sections)
+    }
+    
+    func generateViewModel(with data: TaskResponse) -> HomeCollectionViewCellViewModel {
+        HomeCollectionViewCellViewModel(
+            task: data.task,
+            title: data.title,
+            description: data.description,
+            sort: data.sort,
+            wageType: data.wageType,
+            businessUnitKey: data.businessUnitKey,
+            businessUnit: data.businessUnit,
+            parentTaskID: data.parentTaskID,
+            preplanningBoardQuickSelect: data.preplanningBoardQuickSelect,
+            colorCode: data.colorCode,
+            workingTime: data.workingTime,
+            isAvailableInTimeTrackingKioskMode: data.isAvailableInTimeTrackingKioskMode
+        )
+    }
+    
+    
 }
