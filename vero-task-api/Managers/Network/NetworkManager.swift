@@ -30,7 +30,9 @@ class NetworkManager: Networking {
     func request<T: Decodable>(request: Request, completion: @escaping (Result<T, APIError>) -> Void) {
         var generatedRequest: URLRequest?
         generatedRequest = request.generateRequest()
+        LoadingManager.shared.show()
         let task = session.dataTask(with: generatedRequest!) { data, response, error in
+            LoadingManager.shared.hide()
             if let error {
                 completion(.failure(.unknownError))
                 return

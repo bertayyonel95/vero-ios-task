@@ -15,7 +15,9 @@ protocol HomeViewModelInput {
     func getSections() -> [Section]
     func updateSections(_ sections: [Section])
     func getData()
+    func searchFor(_ subString: String)
     func refreshData()
+    func qrScanPressed()
 }
 
 // MARK: - HomeViewModelOutput
@@ -89,6 +91,20 @@ final class HomeViewModel: HomeViewModelInput  {
         self.sections = sections
     }
     
+    func qrScanPressed() {
+        homeRouter.navigateToQRScanner()
+    }
+    
+    func searchFor(_ subString: String) {
+        let searchSections = sections
+        
+        let filteredSections = searchSections.filter { section in
+            return section.task.title.range(of: subString, options: .caseInsensitive) != nil || section.task.task.range(of: subString, options: .caseInsensitive) != nil  || section.task.description.range(of: subString, options: .caseInsensitive) != nil || section.task.businessUnit.range(of: subString, options: .caseInsensitive) != nil || section.task.businessUnitKey?.range(of: subString, options: .caseInsensitive) != nil || section.task.wageType.range(of: subString, options: .caseInsensitive) != nil || section.task.parentTaskID.range(of: subString, options: .caseInsensitive) != nil || section.task.preplanningBoardQuickSelect?.range(of: subString, options: .caseInsensitive) != nil || section.task.sort.range(of: subString, options: .caseInsensitive) != nil || section.task.workingTime?.range(of: subString, options: .caseInsensitive) != nil
+        }
+        
+        output?.home(self, sectionDidLoad: filteredSections)
+    }
+    
     func addCoreData() {
         let data = CoreDataPO()
         data.businessUnit = "business unit"
@@ -112,6 +128,8 @@ final class HomeViewModel: HomeViewModelInput  {
 // MARK: - Helpers
 private extension HomeViewModel {
     func generateCellData(dataSet: [CoreDataPO]) {
+        cells = []
+        sections = []
         dataSet.forEach { data in
             let cellViewModel = generateViewModel(with: data)
             cells.append(cellViewModel)

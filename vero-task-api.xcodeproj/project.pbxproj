@@ -17,6 +17,9 @@
 		AB361D9D2B4225860037A586 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361D9C2B4225860037A586 /* DataHandler.swift */; };
 		AB361D9F2B4230C40037A586 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361D9E2B4230C40037A586 /* Reachability.swift */; };
 		AB361DA12B42389E0037A586 /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361DA02B42389E0037A586 /* LoadingManager.swift */; };
+		AB361DA32B42B8790037A586 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361DA22B42B8790037A586 /* UIColor+Extensions.swift */; };
+		AB361DA52B42EDA90037A586 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361DA42B42EDA90037A586 /* UILabel+Extension.swift */; };
+		AB361DA82B430EF00037A586 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361DA72B430EF00037A586 /* QRScannerController.swift */; };
 		AB451AE22B4098AB00F5CA16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB451AE12B4098AB00F5CA16 /* Assets.xcassets */; };
 		AB451AF22B40A0F300F5CA16 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF12B40A0F300F5CA16 /* HomeController.swift */; };
 		AB451AF52B40A19C00F5CA16 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF42B40A19C00F5CA16 /* HomeViewModel.swift */; };
@@ -50,6 +53,9 @@
 		AB361D9C2B4225860037A586 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		AB361D9E2B4230C40037A586 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AB361DA02B42389E0037A586 /* LoadingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
+		AB361DA22B42B8790037A586 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		AB361DA42B42EDA90037A586 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		AB361DA72B430EF00037A586 /* QRScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
 		AB451ADA2B4098AA00F5CA16 /* vero-task-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vero-task-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB451AE12B4098AB00F5CA16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB451AF12B40A0F300F5CA16 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -108,6 +114,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		AB361DA62B430EE40037A586 /* QRScanner */ = {
+			isa = PBXGroup;
+			children = (
+				AB361DA72B430EF00037A586 /* QRScannerController.swift */,
+			);
+			path = QRScanner;
+			sourceTree = "<group>";
+		};
 		AB451AD12B4098AA00F5CA16 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +158,7 @@
 		AB451AF02B40A0CB00F5CA16 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AB361DA62B430EE40037A586 /* QRScanner */,
 				AB451AF32B40A0F900F5CA16 /* Home */,
 			);
 			path = Modules;
@@ -214,6 +229,8 @@
 			children = (
 				AB451B092B40A62100F5CA16 /* String+Extensions.swift */,
 				AB451B0B2B40A62F00F5CA16 /* CharacterSet+Extension.swift */,
+				AB361DA22B42B8790037A586 /* UIColor+Extensions.swift */,
+				AB361DA42B42EDA90037A586 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -324,9 +341,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB451B0A2B40A62100F5CA16 /* String+Extensions.swift in Sources */,
+				AB361DA32B42B8790037A586 /* UIColor+Extensions.swift in Sources */,
 				AB451B152B417C3400F5CA16 /* TokenAPI.swift in Sources */,
 				AB361D9B2B4217D40037A586 /* TaskManager.xcdatamodeld in Sources */,
 				AB361D812B419CB40037A586 /* HomeCollectionViewCell.swift in Sources */,
+				AB361DA82B430EF00037A586 /* QRScannerController.swift in Sources */,
 				AB451B1E2B41811400F5CA16 /* AppDelegate.swift in Sources */,
 				AB451B192B417E6F00F5CA16 /* TaskRequest.swift in Sources */,
 				AB451AFD2B40A52000F5CA16 /* NetworkManager.swift in Sources */,
@@ -350,6 +369,7 @@
 				AB361D9D2B4225860037A586 /* DataHandler.swift in Sources */,
 				AB361D882B419F430037A586 /* Section.swift in Sources */,
 				AB361D982B420E9F0037A586 /* CoreDataPO.swift in Sources */,
+				AB361DA52B42EDA90037A586 /* UILabel+Extension.swift in Sources */,
 				AB451B292B418E2000F5CA16 /* TaskAPI.swift in Sources */,
 				AB451B052B40A58300F5CA16 /* Constants.swift in Sources */,
 			);

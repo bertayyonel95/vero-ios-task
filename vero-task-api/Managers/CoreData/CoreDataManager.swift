@@ -22,12 +22,17 @@ class CoreDataManager {
         return container
     }()
     
+    lazy var updateContext: NSManagedObjectContext = {
+        let _updateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        _updateContext.parent = self.persistentContainer.viewContext
+        return _updateContext
+    }()
+    
     static let shared = CoreDataManager()
     private init() {}
     
     func write(data: CoreDataPO) {
-        let context = persistentContainer.viewContext
-        let newData = CDTask(context: context)
+        let newData = CDTask(context: updateContext)
         newData.businessUnit = data.businessUnit
         newData.businessUnitKey = data.businessUnitKey
         newData.colorCode = data.colorCode
@@ -40,9 +45,9 @@ class CoreDataManager {
         newData.title = data.title
         newData.wageType = data.wageType
         newData.workingTime = data.workingTime
-        context.insert(newData)
+        updateContext.insert(newData)
         do {
-            try context.save()
+            try updateContext.save()
         } catch {
             print("error saving data")
         }
@@ -61,14 +66,13 @@ class CoreDataManager {
     
     func deleteAll() {
         LoadingManager.shared.show()
-        let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<CDTask>(entityName: String(describing: CDTask.self))
         do {
-            let objects = try context.fetch(fetchRequest)
+            let objects = try updateContext.fetch(fetchRequest)
             for object in objects {
-                context.delete(object)
+                updateContext.delete(object)
             }
-            try context.save()
+            try updateContext.save()
             LoadingManager.shared.hide()
         } catch {
             print("error during deletion")
