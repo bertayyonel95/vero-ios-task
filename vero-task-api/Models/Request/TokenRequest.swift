@@ -10,7 +10,7 @@ import Foundation
 final class TokenRequest: Request {
     
     init() {
-        var body = try? JSONSerialization.data(withJSONObject: [
+        let body = try? JSONSerialization.data(withJSONObject: [
             "username": Constant.API.username,
             "password": Constant.API.password
         ], options: [])

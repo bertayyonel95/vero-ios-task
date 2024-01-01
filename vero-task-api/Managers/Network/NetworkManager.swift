@@ -33,7 +33,7 @@ class NetworkManager: Networking {
         LoadingManager.shared.show()
         let task = session.dataTask(with: generatedRequest!) { data, response, error in
             LoadingManager.shared.hide()
-            if let error {
+            if error != nil {
                 completion(.failure(.unknownError))
                 return
             }

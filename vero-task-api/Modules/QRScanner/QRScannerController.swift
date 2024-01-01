@@ -35,7 +35,7 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let task = Task {
+        _ = Task {
             guard await isAuthorized else { return }
         }
         view.backgroundColor = UIColor.black

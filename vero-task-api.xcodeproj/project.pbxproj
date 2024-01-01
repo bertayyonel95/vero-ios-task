@@ -20,6 +20,7 @@
 		AB361DA32B42B8790037A586 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361DA22B42B8790037A586 /* UIColor+Extensions.swift */; };
 		AB361DA52B42EDA90037A586 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361DA42B42EDA90037A586 /* UILabel+Extension.swift */; };
 		AB361DA82B430EF00037A586 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361DA72B430EF00037A586 /* QRScannerController.swift */; };
+		AB361DAA2B432E160037A586 /* AdapterFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361DA92B432E160037A586 /* AdapterFunctions.swift */; };
 		AB451AE22B4098AB00F5CA16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB451AE12B4098AB00F5CA16 /* Assets.xcassets */; };
 		AB451AF22B40A0F300F5CA16 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF12B40A0F300F5CA16 /* HomeController.swift */; };
 		AB451AF52B40A19C00F5CA16 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB451AF42B40A19C00F5CA16 /* HomeViewModel.swift */; };
@@ -56,6 +57,7 @@
 		AB361DA22B42B8790037A586 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		AB361DA42B42EDA90037A586 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		AB361DA72B430EF00037A586 /* QRScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
+		AB361DA92B432E160037A586 /* AdapterFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterFunctions.swift; sourceTree = "<group>"; };
 		AB451ADA2B4098AA00F5CA16 /* vero-task-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vero-task-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB451AE12B4098AB00F5CA16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB451AF12B40A0F300F5CA16 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				AB451B032B40A57700F5CA16 /* Constants */,
 				AB451B1A2B417F7F00F5CA16 /* DependencyContainer.swift */,
 				AB361D9E2B4230C40037A586 /* Reachability.swift */,
+				AB361DA92B432E160037A586 /* AdapterFunctions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				AB361D9F2B4230C40037A586 /* Reachability.swift in Sources */,
 				AB451AF52B40A19C00F5CA16 /* HomeViewModel.swift in Sources */,
 				AB451B102B40A75400F5CA16 /* TaskResponse.swift in Sources */,
+				AB361DAA2B432E160037A586 /* AdapterFunctions.swift in Sources */,
 				AB451B0C2B40A62F00F5CA16 /* CharacterSet+Extension.swift in Sources */,
 				AB451B1F2B41811400F5CA16 /* SceneDelegate.swift in Sources */,
 				AB361D7F2B419C550037A586 /* HomeCollectionViewCellViewModel.swift in Sources */,

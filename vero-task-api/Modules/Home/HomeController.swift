@@ -63,6 +63,7 @@ final class HomeController: UIViewController {
     override func viewDidLoad() {
         super.loadView()
         setupView()
+//        viewModel.getData()
         viewModel.getData()
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.itemSize = UICollectionViewFlowLayout.automaticSize
@@ -131,12 +132,12 @@ extension HomeController {
     }
     
     @objc func refresh() {
-        viewModel.refreshData()
+        viewModel.getData()
         DispatchQueue.main.async {
             self.searchBar.text = .empty
         }
         refreshControl.endRefreshing()
-        viewModel.getData()
+//        viewModel.getData()
     }
     
     @objc

@@ -16,7 +16,6 @@ protocol HomeViewModelInput {
     func updateSections(_ sections: [Section])
     func getData()
     func searchFor(_ subString: String)
-    func refreshData()
     func qrScanPressed()
 }
 
@@ -47,39 +46,8 @@ final class HomeViewModel: HomeViewModelInput  {
     }
     
     func getData() {
-        let data = DataHandler.shared.fetchFromMemory()
-        generateCellData(dataSet: data)
-    }
-    
-    func refreshData() {
-        DataHandler.shared.reloadToMemory()
-    }
-    
-    func getToken() {
-        let tokenRequest = TokenRequest()
-        tokenAPI.fetchToken(request: tokenRequest) { [weak self] result in
-            guard let self else { return }
-            switch result {
-            case .success(let success):
-                token = success.oauth.accessToken
-                getTaskList()
-            case .failure(let failure):
-                print(failure)
-            }
-        }
-    }
-    
-    func getTaskList() {
-        let taskRequest = TaskRequest(token: token)
-        taskAPI.fetchTask(request: taskRequest) { [weak self] result in
-            guard let self else { return }
-            switch result {
-            case .success(let success):
-//                generateCellData(dataSet: success)
-                print(success)
-            case .failure(let failure):
-                print(failure)
-            }
+        DataHandler.shared.fetchAndUpdate() { data in
+            self.generateCellData(dataSet: data)
         }
     }
     
@@ -103,25 +71,6 @@ final class HomeViewModel: HomeViewModelInput  {
         }
         
         output?.home(self, sectionDidLoad: filteredSections)
-    }
-    
-    func addCoreData() {
-        let data = CoreDataPO()
-        data.businessUnit = "business unit"
-        data.businessUnitKey = "business unit key"
-        data.colorCode = "colorCode"
-        data.isAvailableInTimeTrackingKioskMode = true
-        data.parentTaskID = "Parent task id"
-        data.preplanningBoardQuickSelect = "preplanning"
-        data.sort = "sort"
-        data.task = "task"
-        data.title = "title"
-        data.wageType = "wagetype"
-        data.taskDescription = "description"
-        data.workingTime = "workingtime"
-        CoreDataManager.shared.write(data: data)
-        CoreDataManager.shared.fetch() { cdata in
-        }
     }
 }
 

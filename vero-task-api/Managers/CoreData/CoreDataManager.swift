@@ -10,7 +10,7 @@ import CoreData
 
 class CoreDataManager {
     
-    var persistentContainer: NSPersistentContainer = {
+    lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "TaskManager")
         container.loadPersistentStores { description, error in
             if let error = error {
@@ -22,17 +22,23 @@ class CoreDataManager {
         return container
     }()
     
-    lazy var updateContext: NSManagedObjectContext = {
-        let _updateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        _updateContext.parent = self.persistentContainer.viewContext
-        return _updateContext
-    }()
-    
     static let shared = CoreDataManager()
-    private init() {}
+    private init(){}
+    
+    func saveContext() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch let error as NSError{
+                print(error)
+            }
+        }
+    }
     
     func write(data: CoreDataPO) {
-        let newData = CDTask(context: updateContext)
+        let context = persistentContainer.viewContext
+        let newData = CDTask(context: context)
         newData.businessUnit = data.businessUnit
         newData.businessUnitKey = data.businessUnitKey
         newData.colorCode = data.colorCode
@@ -45,17 +51,14 @@ class CoreDataManager {
         newData.title = data.title
         newData.wageType = data.wageType
         newData.workingTime = data.workingTime
-        updateContext.insert(newData)
-        do {
-            try updateContext.save()
-        } catch {
-            print("error saving data")
+        if newData != nil && data != nil {
+            context.insert(newData)
+            self.saveContext()
         }
     }
     
     func fetch(onSuccess: @escaping ([CDTask]?) -> Void) {
         let context = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<CDTask>(entityName: String(describing: CDTask.self))
         do {
             let items = try context.fetch(CDTask.fetchRequest()) as? [CDTask]
             onSuccess(items)
@@ -65,17 +68,19 @@ class CoreDataManager {
     }
     
     func deleteAll() {
-        LoadingManager.shared.show()
-        let fetchRequest = NSFetchRequest<CDTask>(entityName: String(describing: CDTask.self))
+        let context = persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "CDTask")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
-            let objects = try updateContext.fetch(fetchRequest)
-            for object in objects {
-                updateContext.delete(object)
-            }
-            try updateContext.save()
-            LoadingManager.shared.hide()
+//            let objects = try context.fetch(fetchRequest)
+//            for object in objects {
+//                context.delete(object)
+//            }
+            try context.execute(deleteRequest)
+            saveContext()
         } catch {
             print("error during deletion")
         }
+        
     }
 }
