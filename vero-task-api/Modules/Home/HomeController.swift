@@ -18,6 +18,8 @@ final class HomeController: UIViewController {
     private var snapshot = NSDiffableDataSourceSnapshot<Section, HomeCollectionViewCellViewModel>()
     private lazy var dataSource = generateDatasource()
     
+    private let refreshControl = UIRefreshControl()
+    
     // MARK: Views
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar(frame: .zero)
@@ -28,7 +30,7 @@ final class HomeController: UIViewController {
         searchBar.delegate = self
         return searchBar
     }()
-    
+
     private lazy var collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.scrollDirection = .vertical
@@ -39,6 +41,9 @@ final class HomeController: UIViewController {
         collectionView.delegate = self
         collectionView.keyboardDismissMode = .onDrag
         collectionView.backgroundColor = .red
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.alwaysBounceVertical = true
+        collectionView.refreshControl = refreshControl
         return collectionView
     }()
     
@@ -60,6 +65,7 @@ final class HomeController: UIViewController {
     override func viewDidLoad() {
         super.loadView()
         setupView()
+        viewModel.getData()
     }
 }
 
@@ -101,10 +107,18 @@ extension HomeController {
     func setupView() {
         view.backgroundColor = .red
         collectionView.backgroundColor = .blue
+        
         view.addSubview(collectionView)
+
         collectionView.snp.makeConstraints() { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    @objc func refresh() {
+        viewModel.refreshData()
+        refreshControl.endRefreshing()
+        viewModel.getData()
     }
 }
 

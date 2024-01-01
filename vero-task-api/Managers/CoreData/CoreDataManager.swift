@@ -58,4 +58,20 @@ class CoreDataManager {
             print("error fetching data")
         }
     }
+    
+    func deleteAll() {
+        LoadingManager.shared.show()
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<CDTask>(entityName: String(describing: CDTask.self))
+        do {
+            let objects = try context.fetch(fetchRequest)
+            for object in objects {
+                context.delete(object)
+            }
+            try context.save()
+            LoadingManager.shared.hide()
+        } catch {
+            print("error during deletion")
+        }
+    }
 }

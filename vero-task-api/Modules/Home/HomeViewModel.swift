@@ -14,6 +14,8 @@ protocol HomeViewModelInput {
     var output: HomeViewModelOutput? { get set }
     func getSections() -> [Section]
     func updateSections(_ sections: [Section])
+    func getData()
+    func refreshData()
 }
 
 // MARK: - HomeViewModelOutput
@@ -38,8 +40,17 @@ final class HomeViewModel: HomeViewModelInput  {
         self.homeRouter = homeRouter
         self.tokenAPI = tokenAPI
         self.taskAPI = taskAPI
-        getToken()
-        addCoreData()
+//        getToken()
+//        addCoreData()
+    }
+    
+    func getData() {
+        let data = DataHandler.shared.fetchFromMemory()
+        generateCellData(dataSet: data)
+    }
+    
+    func refreshData() {
+        DataHandler.shared.reloadToMemory()
     }
     
     func getToken() {
@@ -62,7 +73,8 @@ final class HomeViewModel: HomeViewModelInput  {
             guard let self else { return }
             switch result {
             case .success(let success):
-                generateCellData(dataSet: success)
+//                generateCellData(dataSet: success)
+                print(success)
             case .failure(let failure):
                 print(failure)
             }
@@ -99,7 +111,7 @@ final class HomeViewModel: HomeViewModelInput  {
 
 // MARK: - Helpers
 private extension HomeViewModel {
-    func generateCellData(dataSet: [TaskResponse]) {
+    func generateCellData(dataSet: [CoreDataPO]) {
         dataSet.forEach { data in
             let cellViewModel = generateViewModel(with: data)
             cells.append(cellViewModel)
@@ -112,11 +124,11 @@ private extension HomeViewModel {
         output?.home(self, sectionDidLoad: sections)
     }
     
-    func generateViewModel(with data: TaskResponse) -> HomeCollectionViewCellViewModel {
+    func generateViewModel(with data: CoreDataPO) -> HomeCollectionViewCellViewModel {
         HomeCollectionViewCellViewModel(
             task: data.task,
             title: data.title,
-            description: data.description,
+            description: data.taskDescription,
             sort: data.sort,
             wageType: data.wageType,
             businessUnitKey: data.businessUnitKey,
