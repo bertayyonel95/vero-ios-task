@@ -103,6 +103,7 @@ class CoreDataManager {
             onSuccess(items)
         } catch {
             print("error fetching data")
+            ErrorHandler.shared.showError(message: "error fetching data")
         }
     }
     
@@ -114,6 +115,7 @@ class CoreDataManager {
             saveChanges()
         } catch {
             print("error during deletion")
+            ErrorHandler.shared.showError(message: "error during deletion")
         }
         
     }

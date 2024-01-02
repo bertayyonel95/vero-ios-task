@@ -132,10 +132,10 @@ extension HomeController {
     
     @objc func refresh() {
         viewModel.getData()
+        refreshControl.endRefreshing()
         DispatchQueue.main.async {
             self.searchBar.text = .empty
         }
-        refreshControl.endRefreshing()
     }
     
     @objc

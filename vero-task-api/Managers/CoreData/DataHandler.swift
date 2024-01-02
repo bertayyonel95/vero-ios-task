@@ -44,14 +44,15 @@ class DataHandler: DataHandable {
                             }
                             completion(coreDataArray)
                         case .failure(let failure):
-                            print(failure)
+                            ErrorHandler.shared.showError(message: failure.localizedDescription)
                         }
                     }
                 case .failure(let failure):
-                    print(failure)
+                    ErrorHandler.shared.showError(message: failure.localizedDescription)
                 }
             }
         } else {
+            ErrorHandler.shared.showError(message: "No internet connection", duration: 1.6)
             completion(fetchFromMemory())
         }
     }
