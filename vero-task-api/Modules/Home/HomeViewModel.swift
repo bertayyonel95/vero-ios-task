@@ -41,8 +41,7 @@ final class HomeViewModel: HomeViewModelInput  {
         self.homeRouter = homeRouter
         self.tokenAPI = tokenAPI
         self.taskAPI = taskAPI
-//        getToken()
-//        addCoreData()
+
     }
     
     func getData() {

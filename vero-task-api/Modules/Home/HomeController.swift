@@ -26,6 +26,7 @@ final class HomeController: UIViewController {
         searchBar.searchTextField.placeholder = "Search"
         searchBar.backgroundColor = .systemGray
         searchBar.searchTextField.backgroundColor = .white
+        searchBar.searchTextField.textColor = .black
         searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         searchBar.delegate = self
         return searchBar
@@ -63,7 +64,6 @@ final class HomeController: UIViewController {
     override func viewDidLoad() {
         super.loadView()
         setupView()
-//        viewModel.getData()
         viewModel.getData()
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.itemSize = UICollectionViewFlowLayout.automaticSize
@@ -80,7 +80,6 @@ extension HomeController: HomeViewModelOutput {
             self.applySnapshot(animatingDifferences: false)
         }
     }
-    
 }
 
 extension HomeController {
@@ -137,7 +136,6 @@ extension HomeController {
             self.searchBar.text = .empty
         }
         refreshControl.endRefreshing()
-//        viewModel.getData()
     }
     
     @objc
@@ -148,7 +146,7 @@ extension HomeController {
     
     func calculateHeight(inString: String) -> CGFloat{
         let messageString = inString
-        let attributes : [NSAttributedString.Key : Any] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue) : UIFont.systemFont(ofSize: 16)] //If you use a different font/dimension, change it here
+        let attributes : [NSAttributedString.Key : Any] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue) : UIFont.systemFont(ofSize: 16)]
         let attributedString : NSAttributedString = NSAttributedString(string: messageString, attributes: attributes)
         let rect : CGRect = attributedString.boundingRect(with: CGSize(width: 222.0, height: CGFloat.greatestFiniteMagnitude),
                                                           options: .usesLineFragmentOrigin, context: nil)
@@ -181,7 +179,7 @@ extension HomeController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 10, left: .zero, bottom: 10, right: .zero) // Adjust the top and bottom values to specify the desired spacing
+        UIEdgeInsets(top: 10, left: .zero, bottom: 10, right: .zero)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -189,13 +187,12 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        10 // Adjust the value to specify the desired spacing between items within a row
+        10
     }
 }
 
 // MARK: - HomeCollectionViewCellViewDelegate
 extension HomeController: HomeCollectionViewCellViewDelegate {
-    
 }
 
 // MARK: - UISearchBarDelegate
@@ -212,7 +209,6 @@ extension HomeController: UISearchBarDelegate {
                 self.searchPressed()
             }
         }
-
     }
 }
 

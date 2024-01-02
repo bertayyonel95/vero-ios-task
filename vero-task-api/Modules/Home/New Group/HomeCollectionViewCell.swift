@@ -145,7 +145,7 @@ extension HomeCollectionViewCell {
         
         colorView.snp.makeConstraints() { make in
             make.trailing.top.bottom.equalToSuperview()
-            make.width.equalTo(12)
+            make.width.equalTo(18)
         }
         
         taskLabel.snp.makeConstraints() { make in
@@ -153,7 +153,6 @@ extension HomeCollectionViewCell {
             make.trailing.equalTo(task.snp.leading)
             make.width.equalTo(40)
             make.bottom.equalTo(titleLabel.snp.top)
-//            make.height.equalTo(24)
         }
         
         task.snp.makeConstraints() { make in
@@ -169,7 +168,6 @@ extension HomeCollectionViewCell {
             make.trailing.equalTo(title.snp.leading)
             make.width.equalTo(40)
             make.bottom.equalTo(descriptionTitle.snp.top)
-//            make.height.equalTo(24)
         }
         
         title.snp.makeConstraints() { make in
@@ -185,7 +183,6 @@ extension HomeCollectionViewCell {
             make.trailing.equalTo(colorView.snp.leading)
             make.bottom.equalTo(descriptionLabel.snp.top)
             make.height.equalTo(24)
-//            make.height.equalTo(24)
         }
         
         descriptionLabel.snp.makeConstraints() { make in

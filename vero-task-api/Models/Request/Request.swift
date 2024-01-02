@@ -10,7 +10,6 @@ import Foundation
 enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"
-    // Add more methods as needed
 }
 
 class Request {
