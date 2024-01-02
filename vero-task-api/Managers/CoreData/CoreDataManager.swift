@@ -10,6 +10,51 @@ import CoreData
 
 class CoreDataManager {
     
+    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+            let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+
+            let fileManager = FileManager.default
+            let storeName = "\("TaskManager").sqlite"
+
+            let documentsDirectoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+
+            let persistentStoreURL = documentsDirectoryURL.appendingPathComponent(storeName)
+
+            do {
+                let options = [ NSInferMappingModelAutomaticallyOption : true,
+                                NSMigratePersistentStoresAutomaticallyOption : true]
+
+                try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType,
+                                                                  configurationName: nil,
+                                                                  at: persistentStoreURL,
+                                                                  options: options)
+            } catch {
+                fatalError("Unable to Load Persistent Store")
+            }
+            
+            return persistentStoreCoordinator
+    }()
+    
+    private lazy var managedObjectModel: NSManagedObjectModel = {
+            guard let modelURL = Bundle.main.url(forResource: "TaskManager", withExtension: "momd") else {
+                fatalError("Unable to Find Data Model")
+            }
+
+            guard let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL) else {
+                fatalError("Unable to Load Data Model")
+            }
+            
+            return managedObjectModel
+    }()
+    
+    private(set) lazy var managedObjectContext: NSManagedObjectContext = {
+        let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+
+        managedObjectContext.parent = self.privateManagedObjectContext
+
+        return managedObjectContext
+    }()
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "TaskManager")
         container.loadPersistentStores { description, error in
@@ -21,46 +66,72 @@ class CoreDataManager {
         }
         return container
     }()
+
+    private lazy var privateManagedObjectContext: NSManagedObjectContext = {
+        // Initialize Managed Object Context
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+
+        // Configure Managed Object Context
+        managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
+
+        return managedObjectContext
+    }()
     
     static let shared = CoreDataManager()
     private init(){}
     
-    func saveContext() {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
+    func saveChanges() {
+        managedObjectContext.performAndWait {
             do {
-                try context.save()
-            } catch let error as NSError{
-                print(error)
+                if self.managedObjectContext.hasChanges {
+                    try self.managedObjectContext.save()
+                }
+            } catch {
+                let saveError = error as NSError
+                print("Unable to Save Changes of Managed Object Context")
+                print("\(saveError), \(saveError.localizedDescription)")
             }
+
+            self.privateManagedObjectContext.performAndWait {
+                do {
+                    if self.privateManagedObjectContext.hasChanges {
+                        try self.privateManagedObjectContext.save()
+                    }
+                } catch {
+                    let saveError = error as NSError
+                    print("Unable to Save Changes of Private Managed Object Context")
+                    print("\(saveError), \(saveError.localizedDescription)")
+                }
+            }
+
         }
     }
     
+//    func saveContext() {
+//        let context = persistentContainer.viewContext
+//        if context.hasChanges {
+//            do {
+//                try context.save()
+//            } catch let error as NSError{
+//                print(error)
+//            }
+//        }
+//    }
+    
     func write(data: CoreDataPO) {
-        let context = persistentContainer.viewContext
-        let newData = CDTask(context: context)
-        newData.businessUnit = data.businessUnit
-        newData.businessUnitKey = data.businessUnitKey
-        newData.colorCode = data.colorCode
-        newData.isAvailableInTimeTrackingKioskMode = data.isAvailableInTimeTrackingKioskMode
-        newData.parentTaskID = data.parentTaskID
-        newData.preplanningBoardQuickSelect = data.preplanningBoardQuickSelect
-        newData.sort = data.sort
-        newData.task = data.task
-        newData.taskDescription = data.taskDescription
-        newData.title = data.title
-        newData.wageType = data.wageType
-        newData.workingTime = data.workingTime
+//        let context = persistentContainer.viewContext
+        let newData = poToCDAdapter(data: data, context: managedObjectContext)
         if newData != nil && data != nil {
-            context.insert(newData)
-            self.saveContext()
+            managedObjectContext.insert(newData)
         }
+//        saveContext()
+        saveChanges()
     }
     
     func fetch(onSuccess: @escaping ([CDTask]?) -> Void) {
-        let context = persistentContainer.viewContext
+//        let context = persistentContainer.viewContext
         do {
-            let items = try context.fetch(CDTask.fetchRequest()) as? [CDTask]
+            let items = try managedObjectContext.fetch(CDTask.fetchRequest()) as? [CDTask]
             onSuccess(items)
         } catch {
             print("error fetching data")
@@ -68,16 +139,13 @@ class CoreDataManager {
     }
     
     func deleteAll() {
-        let context = persistentContainer.viewContext
+//        let context = persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "CDTask")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
-//            let objects = try context.fetch(fetchRequest)
-//            for object in objects {
-//                context.delete(object)
-//            }
-            try context.execute(deleteRequest)
-            saveContext()
+            try managedObjectContext.execute(deleteRequest)
+//            saveContext()
+            saveChanges()
         } catch {
             print("error during deletion")
         }

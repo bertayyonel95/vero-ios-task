@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 func cdToPoAdapter(task: CDTask) -> CoreDataPO {
     let coreData = CoreDataPO()
@@ -38,4 +39,21 @@ func generatePO(with item: TaskResponse) -> CoreDataPO {
     data.taskDescription = item.description
     data.workingTime = item.workingTime
     return data
+}
+
+func poToCDAdapter(data: CoreDataPO, context: NSManagedObjectContext) -> CDTask {
+    let newData = CDTask(context: context)
+    newData.businessUnit = data.businessUnit
+    newData.businessUnitKey = data.businessUnitKey
+    newData.colorCode = data.colorCode
+    newData.isAvailableInTimeTrackingKioskMode = data.isAvailableInTimeTrackingKioskMode
+    newData.parentTaskID = data.parentTaskID
+    newData.preplanningBoardQuickSelect = data.preplanningBoardQuickSelect
+    newData.sort = data.sort
+    newData.task = data.task
+    newData.taskDescription = data.taskDescription
+    newData.title = data.title
+    newData.wageType = data.wageType
+    newData.workingTime = data.workingTime
+    return newData
 }
