@@ -16,6 +16,7 @@ protocol HomeViewModelInput {
     func updateSections(_ sections: [Section])
     func getData()
     func searchFor(_ subString: String)
+    func updateFromCell()
     func qrScanPressed()
 }
 
@@ -71,6 +72,13 @@ final class HomeViewModel: HomeViewModelInput  {
         
         output?.home(self, sectionDidLoad: filteredSections)
     }
+    
+    func updateFromCell() {
+        cells.forEach { item in
+            let section = Section(task: item)
+            if !sections.contains(section) { sections.append(section) }
+        }
+    }
 }
 
 // MARK: - Helpers
@@ -83,10 +91,7 @@ private extension HomeViewModel {
             cells.append(cellViewModel)
         }
         
-        cells.forEach { item in
-            let section = Section(task: item)
-            if !sections.contains(section) { sections.append(section) }
-        }
+        updateFromCell()
         output?.home(self, sectionDidLoad: sections)
     }
     

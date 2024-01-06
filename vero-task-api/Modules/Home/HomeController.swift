@@ -50,6 +50,7 @@ final class HomeController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: .main)
         self.viewModel.output = self
+        viewModel.getData()
     }
     
     // MARK: deinit
@@ -64,7 +65,6 @@ final class HomeController: UIViewController {
     override func viewDidLoad() {
         super.loadView()
         setupView()
-        viewModel.getData()
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.itemSize = UICollectionViewFlowLayout.automaticSize
         }
@@ -75,7 +75,7 @@ final class HomeController: UIViewController {
 extension HomeController: HomeViewModelOutput {
     func home(_ viewModel: HomeViewModelInput, sectionDidLoad list: [Section]) {
         DispatchQueue.main.async {
-            self.collectionView.reloadData()
+//            self.collectionView.reloadData()
             viewModel.updateSections(list)
             self.applySnapshot(animatingDifferences: false)
         }
@@ -200,12 +200,14 @@ extension HomeController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             DispatchQueue.main.async {
-                self.viewModel.getData()
+//                self.viewModel.getData()
+                self.viewModel.updateFromCell()
                 self.collectionView.reloadData()
             }
         } else {
             DispatchQueue.main.async {
-                self.viewModel.getData()
+//                self.viewModel.getData()
+                self.viewModel.updateFromCell()
                 self.searchPressed()
             }
         }
